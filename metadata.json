@@ -1,0 +1,6 @@
+{
+  "name": "Blood Bank Admin & Staff Portal",
+  "description": "Dense, data-first operational portal for blood bank staff and administrators: inventory tracking, emergency request handling, donor management, and compliance auditing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
