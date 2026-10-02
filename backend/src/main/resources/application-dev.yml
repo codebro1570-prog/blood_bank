@@ -1,0 +1,20 @@
+# DEVELOPMENT PROFILE ONLY — never use in production.
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE
+# Dev-only JWT secret. DO NOT ship this value. Override with JWT_SECRET env var.
+bloodbank:
+  jwt:
+    secret: dev-only-please-change-in-production-minimum-32-char-key

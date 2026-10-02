@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --accent-crimson: #B3203A;
+    --accent-crimson-hover: #991B32;
+    --accent-crimson-light: #FDF2F4;
+    --bg-warm: #FBFBFA;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-warm);
+    color: #2C2A29;
+    min-height: 100vh;
+  }
+}

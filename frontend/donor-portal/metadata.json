@@ -1,0 +1,6 @@
+{
+  "name": "Blood Bank Donor Portal",
+  "description": "Warm, accessible donor portal for blood donors to check eligibility, track donation history, and receive blood bank notifications.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

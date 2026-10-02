@@ -1,0 +1,77 @@
+# ----------------------------------------------------
+# Markdown exclusion (as requested: without .md files)
+# ----------------------------------------------------
+*.md
+**/*.md
+
+# ----------------------------------------------------
+# Dependencies & Package Managers
+# ----------------------------------------------------
+node_modules/
+**/node_modules/
+package-lock.json.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ----------------------------------------------------
+# Java & Maven Build Artifacts
+# ----------------------------------------------------
+target/
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+.mvn/
+mvnw
+mvnw.cmd
+
+# ----------------------------------------------------
+# Frontend Build Outputs
+# ----------------------------------------------------
+dist/
+**/dist/
+build/
+**/build/
+.output/
+.parcel-cache/
+
+# ----------------------------------------------------
+# IDE & Editor Configurations
+# ----------------------------------------------------
+.idea/
+*.iml
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.project
+.classpath
+.settings/
+
+# ----------------------------------------------------
+# Operating System & Temporary Files
+# ----------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+logs/
+*.tmp
+*.temp
+
+# ----------------------------------------------------
+# Environment Variables & Credentials
+# ----------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# ----------------------------------------------------
+# Archive & Legacy Kits
+# ----------------------------------------------------
+archive/
