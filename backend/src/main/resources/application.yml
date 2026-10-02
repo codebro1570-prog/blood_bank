@@ -1,12 +1,12 @@
 server:
-  port: ${SERVER_PORT:8080}
+  port: ${PORT:${SERVER_PORT:8080}}
 spring:
   application:
     name: blood-bank
   datasource:
-    url: ${DB_URL:jdbc:mysql://localhost:3306/bloodbank?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
-    username: ${DB_USERNAME:bloodbank}
-    password: ${DB_PASSWORD:bloodbank}
+    url: ${DB_URL:jdbc:mysql://${MYSQLHOST:localhost}:${MYSQLPORT:3306}/${MYSQLDATABASE:bloodbank}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DB_USERNAME:${MYSQLUSER:bloodbank}}
+    password: ${DB_PASSWORD:${MYSQLPASSWORD:bloodbank}}
   jpa:
     open-in-view: false
     hibernate:
@@ -24,9 +24,9 @@ spring:
       write-dates-as-timestamps: false
   data:
     redis:
-      host: ${REDIS_HOST:localhost}
-      port: ${REDIS_PORT:6379}
-      password: ${REDIS_PASSWORD:}
+      host: ${REDIS_HOST:${REDISHOST:localhost}}
+      port: ${REDIS_PORT:${REDISPORT:6379}}
+      password: ${REDIS_PASSWORD:${REDISPASSWORD:}}
       timeout: 2000ms
     web:
       pageable:
