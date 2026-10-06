@@ -1,25 +1,14 @@
-# Stage 1: Build stage with eclipse-temurin Java 21 JDK
-FROM eclipse-temurin:21-jdk-alpine AS builder
+# Stage 1: Build stage
+FROM maven:3.9-eclipse-temurin-21-alpine AS builder
 WORKDIR /app
 
-# Install bash and dos2unix to ensure wrapper script executes cleanly on Alpine Linux
-RUN apk add --no-cache bash
+# Cache dependencies
+COPY pom.xml .
+RUN mvn dependency:go-offline -B || true
 
-# Copy Maven wrapper and POM first to leverage Docker layer caching
-COPY pom.xml mvnw ./
-COPY .mvn .mvn
-
-# Ensure wrapper has execution rights and LF line endings
-RUN chmod +x ./mvnw && sed -i 's/\r$//' ./mvnw
-
-# Pre-fetch dependencies (offline caching)
-RUN ./mvnw dependency:go-offline -B || true
-
-# Copy application source code
+# Build application
 COPY src ./src
-
-# Package production executable JAR without running tests during image build
-RUN ./mvnw clean package -DskipTests
+RUN mvn clean package -DskipTests
 
 # Stage 2: Runtime stage with lightweight eclipse-temurin Java 21 JRE
 FROM eclipse-temurin:21-jre-alpine
